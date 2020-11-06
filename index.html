@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css"> type="text/css">
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Time</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Java Script Slice</h2>
+      <p>Come Git a slice!</p>
+      <div class="card">
+        <p><span class="name"></span></p>
+        <p><span class="phone"></span></p>
+        <p><span class="address"></span></p>
+        <p><span class="email"></span></p>
+      </div>
+    </div>
+    <div class="container userInfo">
+      <form id="newUser">
+        <h4>Welcome to JS Slice!</h4>
+        <p>Please take a moment to supply us with any details we may need to get your pizza going.</p>
+        <input id="name" type="text" class="form-control" placeholder="Enter Name for Order">
+        <input id="phone" type="text" class="form-control" placeholder="Phone Number for Order">
+        <input id="address" type="text" class="form-control" placeholder="Address for Delivery">
+        <input id="email" type="text" class="form-control" placeholder="Email for any specials or coupons">
+        <button type="submit" class="btn btn-success" id="userAdd">Pizza Time!</button>
+      </form>
+    </div>
+    <div class="container pizza">
+      <form id="pizza">
+        <h4>Lets Start Building</h4>
+        <label>Pizza Size:</label>
+          <select class="size">
+            <option value="small">Small($12.50)</option>
+            <option value="medium">Medium($13.75)</option>
+            <option value="large">Large($16.00)</option>
+            <option value="x-large">X-Large($19.25)</option>
+          </select>
+        <br>
+        <label>Sauce Style:</label>
+            <select class="sauce">
+              <option value="marinara">Marinara</option>
+              <option value="bbq">BBQ</option>
+              <option value="ranch">Ranch</option>
+              <option value="buffalo">Buffalo</option>
+              <option value="alfredo">Alfredo</option>
+            </select>
+        <br>
+        <label>Crust Style:</label>
+            <select class="crust">
+              <option value="thin">Thin crust</option>
+              <option value="thick">Thick crust</option>
+              <option value="tossed">Hand Tossed</option>
+              <option value="stuffed">Cheese Stuffed</option>
+            </select>
+        <br>
+        <h4>Throw some Meat on it</h4>
+        <div class="checkbox">
+          <label><input type="checkbox" name="bacon" value="meats">Bacon</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="anchovies" value="meats">Anchovies</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="canadianBacon" value="meats">Canadian Bacon</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="grilledChicken" value="meats">Grilled Chicken</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="sausage" value="meats">Sausage</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="pepperoni" value="meats">Pepperoni</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="phillySteak" value="meats">Philly Steak</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="noMeat" value="meats">No Meat Please</label>
+        </div>
+        <br>
+        <h4>Perhaps a veggie or two?</h4>
+        <div class="checkbox">
+          <label><input type="checkbox" name="romaTomato" value="veggies">Roma Tomato</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="blackOlives" value="veggies">Black Olives</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="jalapeno" value="veggies">Jalapeno</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="roastedGarlic" value="veggies">Roasted Garlic</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="mushrooms" value="veggies">Mushrooms</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="onion" value="veggies">Onion</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="artichoke" value="veggies">Artichoke hearts</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="bananaPepper" value="veggies">Banana Peppers</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="pineapple" value="veggies">Pineapple</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="greenPepper" value="veggies">Green Pepper</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="noVeggie" value="veggies">No Veggies please</label>
+        </div>
+        <button type="submit" class="btn btn-danger" id="orderAdd">Add to Order</button>
+      </form>
+      <div class="container order">
+        <h4>Customer receipt:</h4>
+        <p>Name: <span class="name"></span></p>
+        <p>Number: <span class="number"></span></p>
+        <p>Address: <span class="address"></span></p>
+        <p>Email: <span class="email"></span></p>
+        <h4>Your Order:</h4>
+        <ol id="order">
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
