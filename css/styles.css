@@ -1,0 +1,8 @@
+.card {
+  float: right;
+  display: none;
+}
+
+.container .pizza {
+  display: none;
+}

@@ -24,8 +24,8 @@
 | Size selection Small, Medium, Large, X-Large | Large | Large |
 | Sauce selection Marinara, bbq, ranch, buffalo, alfredo | Marinara | Marinara |
 | Crust style Thin, Thick, Hand tossed, Cheese stuffed | Thin | Thin |
-| Meat selection Bacon, Anchovies, Canadian Bacon, Grilled Chicken, Sausage, Pepperoni, Philly Steak, None | Bacon | Bacon |
 | Veggie selection Roma Tomato, Black Olives, Jalapeno, Roasted Garlic, Mushrooms, Onion, Artichoke Hearts, Banana Pepper, Pineapple, Green Pepper, None | Pineapple | Pineapple |
+| Meat selection Bacon, Anchovies, Canadian Bacon, Grilled Chicken, Sausage, Pepperoni, Philly Steak, None | Bacon | Bacon |
 | Constructor retains all selected values | Large, Marinara, Thin, Bacon, Pineapple | Large, Marinara, Thin, Bacon, Pineapple |
 | Add cost of items selected | 5+1+1+1+1 | 9 |
 
