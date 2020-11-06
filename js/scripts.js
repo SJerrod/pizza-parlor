@@ -21,6 +21,14 @@ Order.prototype.assignId = function() {
   return this.currentId;
 }
 
+// Order.prototype.findPizza = function(pizzasClasslist){
+//   for(let i =0; i < this.pizzas.length; i++){
+//     if(this.pizzas.includes(this.pizzas[i].id)){
+//       return this.pizzas[i];
+//     }
+//   }
+// }
+
 function Pizza(size, sauce, crust, veggies, meats) {
   this.size = size;
   this.sauce = sauce;
@@ -30,11 +38,12 @@ function Pizza(size, sauce, crust, veggies, meats) {
 }
 
 // User Logic
-// function addClickEvent(){
-//   $("#orderAdd").on('click', 'button.order', function(){
-//     $('#order').append("<li>" + order + "</li>");
-//   });
-// }
+function addClickEvent(order){
+  $("li").on('click', function(){
+    console.log("its working");
+    // $('li').append("<p>" + newPizza.veggies + ", " + newPizza.meats + "</p>");
+  });
+}
 
 $(document).ready(function() {
   $("#newUser").submit(function(event) {
@@ -65,8 +74,8 @@ $(document).ready(function() {
       }).get();
       let newPizza = new Pizza(size, sauce, crust, veggies, meats)
       order.addPizza(newPizza);
-      $("#order").append(newPizza);
-      console.log(order);
+      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + "</li>");
+      addClickEvent(order);
     });
   });
 });
