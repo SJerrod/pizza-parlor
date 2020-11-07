@@ -53,7 +53,6 @@ function Pizza(size, sauce, crust, veggies, meats) {
 function addClickEvent(order){
   $("li").on('click', function(){
     console.log("its working");
-    $('p.toppings').toggle();
   });
 }
 
@@ -75,7 +74,6 @@ $(document).ready(function() {
     let order = new Order();
     $("#pizza").submit(function(event) {
       event.preventDefault();
-      addClickEvent();
       let size = $("option[name='size']:selected").val();
       let sauce = $("option[name='sauce']:selected").val();
       let crust = $("option[name='crust']:selected").val();
@@ -87,7 +85,8 @@ $(document).ready(function() {
       }).get();
       let newPizza = new Pizza(size, sauce, crust, veggies, meats)
       order.addPizza(newPizza);
-      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "</li>" + "<br>" + "<p class='toppings'>" + newPizza.veggies + ", " + newPizza.meats + "</p>");
+      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "</li>");
+      addClickEvent();
       console.log(order);
     });
   });
