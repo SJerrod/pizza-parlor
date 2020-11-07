@@ -9,6 +9,7 @@ function Customer(name, phone, address, email) {
 function Order() {
   this.pizzas = [];
   this.currentId = 0;
+  this.orderTotal = 0;
 }
 
 Order.prototype.addPizza = function(pizza) {
@@ -19,6 +20,47 @@ Order.prototype.addPizza = function(pizza) {
 Order.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
+}
+
+// Order.prototype.Cost = function() {
+//   for(let i = 0; i < this.pizzas.length; i++){
+//     if (this.pizzas[i].size = "Small") {
+//       this.total += 12;
+//     } else if (this.pizzas[i].size = "Medium") {
+//       this.total += 14;
+//     } else if (this.pizzas[i].size = "Large") {
+//       this.total += 16;
+//     } else if (this.pizzas[i].size = "X-Large") {
+//       this.total += 19;
+//     }
+//   }
+// }
+
+Pizza.prototype.Cost = function() {
+  switch (this.size) {
+    case ("Small"):
+      this.pizzaTotal += 12;
+      break;
+    case ("Medium"):
+      this.pizzaTotal += 14;
+      break;
+    case ("Large"):
+      this.pizzaTotal += 16;
+      break;
+    case ("X-Large"):
+      this.pizzaTotal += 19;
+      break;
+  }
+  let vegCount = 0;
+  let meatCount = 0;
+  for (let i=0; i < this.veggies.length; i ++) {
+    vegCount += 1;
+  }
+  for (let i=0; i < this.meats.length; i ++) {
+    meatCount += 2;
+  }
+  this.pizzaTotal += vegCount;
+  this.pizzaTotal += meatCount;
 }
 
 // Order.prototype.findPizza = function(pizzasClasslist){
@@ -36,25 +78,16 @@ function Pizza(size, sauce, crust, veggies, meats) {
   this.crust = crust;
   this.veggies = veggies;
   this.meats = meats;
+  this.pizzaTotal = 0;
 }
 
-// Pizza.prototype.Cost = function(pizza) {
-//   let total = 0;
-//   for(let i = 0; i < this.pizza.length; i++){
-//     if(this.pizzas.size = "Small") {
-//       total += 12;
-//       return total;
-//       console.log(total);
-//     }
-//   }
-// }
 
 // User Logic
-function addClickEvent(order){
-  $("li").on('click', function(){
-    console.log("its working");
-  });
-}
+// function addClickEvent(order){
+//   $("li").on('click', function(){
+//     console.log("its working");
+//   });
+// }
 
 $(document).ready(function() {
   $("#newUser").submit(function(event) {
@@ -83,11 +116,13 @@ $(document).ready(function() {
       let meats = $("input[name='meats']:checked").map(function(){
         return this.value;
       }).get();
-      let newPizza = new Pizza(size, sauce, crust, veggies, meats)
+      let newPizza = new Pizza(size, sauce, crust, veggies, meats);
       order.addPizza(newPizza);
       $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "</li>");
-      addClickEvent();
-      console.log(order);
+      newPizza.Cost();
+      console.log(order.pizzas[0]);
+      console.log(newPizza.pizzaTotal);
+      console.log(order.orderTotal);
     });
   });
 });
