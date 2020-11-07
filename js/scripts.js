@@ -22,19 +22,22 @@ Order.prototype.assignId = function() {
   return this.currentId;
 }
 
-// Order.prototype.Cost = function() {
-//   for(let i = 0; i < this.pizzas.length; i++){
-//     if (this.pizzas[i].size = "Small") {
-//       this.total += 12;
-//     } else if (this.pizzas[i].size = "Medium") {
-//       this.total += 14;
-//     } else if (this.pizzas[i].size = "Large") {
-//       this.total += 16;
-//     } else if (this.pizzas[i].size = "X-Large") {
-//       this.total += 19;
-//     }
-//   }
-// }
+Order.prototype.Cost = function() {
+  for(let i = 0; i < this.pizzas.length; i++){
+    this.orderTotal += this.pizzas[i].pizzaTotal;
+    this.pizzas[i].pizzaTotal = 0;
+  }
+}
+
+function Pizza(size, sauce, crust, veggies, meats) {
+  this.size = size;
+  this.sauce = sauce;
+  this.crust = crust;
+  this.veggies = veggies;
+  this.meats = meats;
+  this.pizzaTotal = 0;
+}
+
 
 Pizza.prototype.Cost = function() {
   switch (this.size) {
@@ -63,32 +66,7 @@ Pizza.prototype.Cost = function() {
   this.pizzaTotal += meatCount;
 }
 
-// Order.prototype.findPizza = function(pizzasClasslist){
-//   for(let i =0; i < this.pizzas.length; i++){
-//     if(this.pizzas.includes(this.pizzas[i].id)){
-//       return this.pizzas[i];
-//     }
-//   }
-// }
-
-
-function Pizza(size, sauce, crust, veggies, meats) {
-  this.size = size;
-  this.sauce = sauce;
-  this.crust = crust;
-  this.veggies = veggies;
-  this.meats = meats;
-  this.pizzaTotal = 0;
-}
-
-
 // User Logic
-// function addClickEvent(order){
-//   $("li").on('click', function(){
-//     console.log("its working");
-//   });
-// }
-
 $(document).ready(function() {
   $("#newUser").submit(function(event) {
     event.preventDefault();
@@ -117,12 +95,13 @@ $(document).ready(function() {
         return this.value;
       }).get();
       let newPizza = new Pizza(size, sauce, crust, veggies, meats);
+
       order.addPizza(newPizza);
-      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "</li>");
       newPizza.Cost();
+      $("ul#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "| $" + newPizza.pizzaTotal + ".00 |" + "</li>");
+      order.Cost();
+      $("p#total").text("Total due today: | $" + order.orderTotal + ".00 |")
       console.log(order.pizzas[0]);
-      console.log(newPizza.pizzaTotal);
-      console.log(order.orderTotal);
     });
   });
 });

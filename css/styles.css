@@ -1,6 +1,10 @@
 .card {
   float: right;
   display: none;
+  color: green;
+  padding: 10px;
+  text-align: left;
+  border: 5px dotted green;
 }
 
 .container .pizza {
@@ -9,4 +13,47 @@
 
 .toppings {
   display: none;
+}
+
+body {
+  background-color: rgb(255, 255, 188);
+  border: dotted yellow;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+.jumbotron {
+  text-align: center;
+  height: 100px;
+  width: auto;
+  background-color: crimson;
+  padding-top: 13px;
+  margin-top: 10px;
+  border: 5px dotted yellow;
+  color: yellow;
+  font-family: monospace;
+  font-size: x-large;
+}
+
+#newUser {
+  height: auto;
+  width: 50%;
+  border: solid green;
+  background-color: green;
+  color: yellow;
+  border: 5px dotted yellow;
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card li {
+  text-align: right;
+}
+
+#total {
+  text-align: right;
 }

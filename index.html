@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h2>Java Script Slice</h2>
+      <h2>Java Script Pie.pizza</h2>
       <p>Come Git a slice!</p>
       <div class="card">
         <h4>Customer receipt:</h4>
@@ -21,8 +21,9 @@
         <p>Address: <span class="address"></span></p>
         <p>Email: <span class="email"></span></p>
         <h4>Your Order:</h4>
-        <ol id="order">
-        </ol>
+        <ul id="order">
+        </ul>
+        <p id="total"></p>
       </div>
     </div>
     <div class="container userInfo">
@@ -33,7 +34,7 @@
         <input id="phone" type="text" class="form-control" placeholder="Phone Number for Order">
         <input id="address" type="text" class="form-control" placeholder="Address for Delivery">
         <input id="email" type="text" class="form-control" placeholder="Email for any specials or coupons">
-        <button type="submit" class="btn btn-success" id="userAdd" onclick="$('#newUser').hide(), $('.card').show(), $('.container.pizza').show()">Pizza Time!</button>
+        <button type="submit" class="btn btn-danger" id="userAdd" onclick="$('#newUser').hide(), $('.card').show(), $('.container.pizza').show()">Pizza Time!</button>
       </form>
     </div>
     <div class="container pizza">
@@ -64,46 +65,47 @@
               <option name="crust" value="Cheese stuffed">Cheese Stuffed</option>
             </select>
         <br>
-        <h4>Perhaps a veggie or two?</h4>
-          <label><input type="checkbox" value="Roma Tomato" name="veggies">Roma Tomato</label>
-          <br>
-          <label><input type="checkbox" value="Black Olives" name="veggies">Black Olives</label>
-          <br>
-          <label><input type="checkbox" value="Jalapeno" name="veggies">Jalapeno</label>
-          <br>
-          <label><input type="checkbox" value="Roasted Garlic" name="veggies">Roasted Garlic</label>
-          <br>
-          <label><input type="checkbox" value="Mushrooms" name="veggies">Mushrooms</label>
-          <br>
-          <label><input type="checkbox" value="Onion" name="veggies">Onion</label>
-          <br>
-          <label><input type="checkbox" value="Artichoke" name="veggies">Artichoke hearts</label>
-          <br>
-          <label><input type="checkbox" value="Banana Pepper" name="veggies">Banana Peppers</label>
-          <br>
-          <label><input type="checkbox" value="Pineapple" name="veggies">Pineapple</label>
-          <br>
-          <label><input type="checkbox" value="Green Pepper" name="veggies">Green Pepper</label>
-          <br>
-          <label><input type="checkbox" value="No Veggie" name="veggies">No Veggies please</label>
-        <h4>Throw some Meat on it</h4>
-          <label><input type="checkbox" value="Bacon" name="meats">Bacon</label>
-          <br>
-          <label><input type="checkbox" value="Anchovies" name="meats">Anchovies</label>
-          <br>
-          <label><input type="checkbox" value="Canadian Bacon" name="meats">Canadian Bacon</label>
-          <br>
-          <label><input type="checkbox" value="Grilled Chicken" name="meats">Grilled Chicken</label>
-          <br>
-          <label><input type="checkbox" value="Sausage" name="meats">Sausage</label>
-          <br>
-          <label><input type="checkbox" value="Pepperoni" name="meats">Pepperoni</label>
-          <br>
-          <label><input type="checkbox" value="Philly Steak" name="meats">Philly Steak</label>
-          <br>
-          <label><input type="checkbox" value="No Meat" name="meats">No Meat Please</label>
-        <br>
-        <button type="submit" class="order btn-danger" id="orderAdd">Add to Order</button>
+        <div class="row">
+          <div class="col-md-5">
+            <h4>Perhaps a veggie or two?</h4>
+              <label><input type="checkbox" value="Roma Tomato" name="veggies">Roma Tomato</label>
+              <br>
+              <label><input type="checkbox" value="Black Olives" name="veggies">Black Olives</label>
+              <br>
+              <label><input type="checkbox" value="Jalapeno" name="veggies">Jalapeno</label>
+              <br>
+              <label><input type="checkbox" value="Roasted Garlic" name="veggies">Roasted Garlic</label>
+              <br>
+              <label><input type="checkbox" value="Mushrooms" name="veggies">Mushrooms</label>
+              <br>
+              <label><input type="checkbox" value="Onion" name="veggies">Onion</label>
+              <br>
+              <label><input type="checkbox" value="Artichoke" name="veggies">Artichoke hearts</label>
+              <br>
+              <label><input type="checkbox" value="Banana Pepper" name="veggies">Banana Peppers</label>
+              <br>
+              <label><input type="checkbox" value="Pineapple" name="veggies">Pineapple</label>
+              <br>
+              <label><input type="checkbox" value="Green Pepper" name="veggies">Green Pepper</label>
+          </div>
+          <div class="col-md-5">
+            <h4>Throw some Meat on it?</h4>
+              <label><input type="checkbox" value="Bacon" name="meats">Bacon</label>
+              <br>
+              <label><input type="checkbox" value="Anchovies" name="meats">Anchovies</label>
+              <br>
+              <label><input type="checkbox" value="Canadian Bacon" name="meats">Canadian Bacon</label>
+              <br>
+              <label><input type="checkbox" value="Grilled Chicken" name="meats">Grilled Chicken</label>
+              <br>
+              <label><input type="checkbox" value="Sausage" name="meats">Sausage</label>
+              <br>
+              <label><input type="checkbox" value="Pepperoni" name="meats">Pepperoni</label>
+              <br>
+              <label><input type="checkbox" value="Philly Steak" name="meats">Philly Steak</label>
+              <button type="submit" class="order btn-danger" id="orderAdd">Add to Order</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
