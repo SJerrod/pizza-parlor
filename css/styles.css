@@ -6,3 +6,7 @@
 .container .pizza {
   display: none;
 }
+
+.toppings {
+  display: none;
+}

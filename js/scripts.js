@@ -29,6 +29,7 @@ Order.prototype.assignId = function() {
 //   }
 // }
 
+
 function Pizza(size, sauce, crust, veggies, meats) {
   this.size = size;
   this.sauce = sauce;
@@ -37,11 +38,22 @@ function Pizza(size, sauce, crust, veggies, meats) {
   this.meats = meats;
 }
 
+// Pizza.prototype.Cost = function(pizza) {
+//   let total = 0;
+//   for(let i = 0; i < this.pizza.length; i++){
+//     if(this.pizzas.size = "Small") {
+//       total += 12;
+//       return total;
+//       console.log(total);
+//     }
+//   }
+// }
+
 // User Logic
 function addClickEvent(order){
   $("li").on('click', function(){
     console.log("its working");
-    // $('li').append("<p>" + newPizza.veggies + ", " + newPizza.meats + "</p>");
+    $('p.toppings').toggle();
   });
 }
 
@@ -63,6 +75,7 @@ $(document).ready(function() {
     let order = new Order();
     $("#pizza").submit(function(event) {
       event.preventDefault();
+      addClickEvent();
       let size = $("option[name='size']:selected").val();
       let sauce = $("option[name='sauce']:selected").val();
       let crust = $("option[name='crust']:selected").val();
@@ -74,8 +87,8 @@ $(document).ready(function() {
       }).get();
       let newPizza = new Pizza(size, sauce, crust, veggies, meats)
       order.addPizza(newPizza);
-      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + "</li>");
-      addClickEvent(order);
+      $("ol#order").append("<li>" + newPizza.size + ", " + newPizza.crust + ", " + newPizza.sauce + "</li>" + "<br>" + "<p class='toppings'>" + newPizza.veggies + ", " + newPizza.meats + "</p>");
+      console.log(order);
     });
   });
 });
