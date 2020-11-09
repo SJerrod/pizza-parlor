@@ -4,7 +4,8 @@
 
 #### **By Jerrod Styrk**
 
-## Choose from a plethora of options. From toppings to sauce to crust we have the pizza thats perfect for you... now all you must do is order it.
+## Decription
+- Choose from a plethora of options. From toppings to sauce to crust we have the pizza thats perfect for you... now all you must do is order it.
 
 ## Setup
 
